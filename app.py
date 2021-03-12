@@ -1,10 +1,11 @@
 from flask import Flask, request, render_template
-from flask import jsonify
+from db import *
 
+# db = DatabaseConnection()
 
 app = Flask(__name__)
 
-@app.route('/')#renvoie le template de bienvenue
+@app.route('/', methods=['GET','POST'])#renvoie le template de bienvenue
 def get_index():
     return render_template("index.html")
 
